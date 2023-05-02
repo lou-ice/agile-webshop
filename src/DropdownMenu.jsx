@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Dropdown, DropdownButton } from "react-bootstrap";
+import { NavDropdown, Nav } from "react-bootstrap";
+import "./DropdownMenu.css";
 
 function DropdownMenu() {
   const [showSubMenu, setShowSubMenu] = useState(false);
@@ -9,15 +10,25 @@ function DropdownMenu() {
   };
 
   return (
-    <DropdownButton title="Dropdown Menu">
-      <Dropdown.Item onClick={handleSubMenuClick}>Show Submenu</Dropdown.Item>
-      {showSubMenu && (
-        <div className="submenu">
-          <Dropdown.Item>Submenu Item 1</Dropdown.Item>
-          <Dropdown.Item>Submenu Item 2</Dropdown.Item>
-        </div>
-      )}
-    </DropdownButton>
+    <>
+      <Nav>
+        <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+          <NavDropdown.Item onClick={handleSubMenuClick}>
+            Action
+          </NavDropdown.Item>
+          {showSubMenu && (
+            <div className="submenu">
+              <div>
+                <NavDropdown.Item>Submenu Item 1</NavDropdown.Item>
+              </div>
+              <div>
+                <NavDropdown.Item>Submenu Item 2</NavDropdown.Item>
+              </div>
+            </div>
+          )}
+        </NavDropdown>
+      </Nav>
+    </>
   );
 }
 
