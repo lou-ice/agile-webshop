@@ -12,9 +12,7 @@ function Header() {
         <Navbar.Brand>{brandName}</Navbar.Brand>
         <Nav className="me-auto">
           <Nav.Item>
-            <Nav.Link>
-              <DropdownMenu />
-            </Nav.Link>
+            <DropdownMenu />
           </Nav.Item>
           <Nav.Item>
             <Nav.Link>Link 1</Nav.Link>
