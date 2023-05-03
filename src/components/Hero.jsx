@@ -10,7 +10,7 @@ const Hero = (props) => {
   useEffect(() => {
     let getImage = () => {
       fetch(
-        "https://api.unsplash.com/photos/random?client_id=3YYcfmOi4qZDWlyZtbQj4hmzpQdjWpxW0axvYlp4RBU"
+        "https://api.unsplash.com/photos/SmIlY2uAHo8?client_id=3YYcfmOi4qZDWlyZtbQj4hmzpQdjWpxW0axvYlp4RBU"
       )
         .then((response) => {
           return response.json();
