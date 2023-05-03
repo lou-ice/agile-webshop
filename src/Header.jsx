@@ -2,6 +2,7 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Form from "react-bootstrap/Form";
+import DropdownMenu from "./DropdownMenu";
 
 function Header() {
   const brandName = "Cool Fashion";
@@ -11,7 +12,9 @@ function Header() {
         <Navbar.Brand>{brandName}</Navbar.Brand>
         <Nav className="me-auto">
           <Nav.Item>
-            <Nav.Link>Dropdown</Nav.Link>
+            <Nav.Link>
+              <DropdownMenu />
+            </Nav.Link>
           </Nav.Item>
           <Nav.Item>
             <Nav.Link>Link 1</Nav.Link>
