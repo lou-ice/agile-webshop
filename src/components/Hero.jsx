@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import classes from "./Hero.module.css";
+import classes from "../css/Hero.module.css";
 
 const Hero = (props) => {
   let [image, setImage] = useState(null);
