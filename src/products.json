@@ -1,0 +1,72 @@
+{
+  "product1": {
+    "name": "Knitted Beige Sweater",
+    "productNumber": 1,
+    "description": "A beige knitted cardigan in a cropped model. With a v-neck and buttons to close it. Comes in beige.",
+    "price": 299,
+    "img": "https://www.na-kd.com/resize/globalassets/knitted_v-neck_cardigan-1100-006906-0005_25042.jpg?ref=3BD24515EA&quality=80&sharpen=0.3&width=846"
+  },
+  "product2": {
+    "name": "Organic V-necked Knitted Shirt",
+    "productNumber": 2,
+    "description": "A green shirt with a ribbed design. It has long arms and a v-neck. Comfortable and form-fitting.",
+    "price": 199,
+    "img": "https://www.na-kd.com/resize/globalassets/nakd_v-detail_light_rib_knitted_sweater_1100-005027-0052_10208.jpg?ref=B145265B23&quality=80&sharpen=0.3&width=846"
+  },
+  "product3": {
+    "name": "Blue Poloshirt",
+    "productNumber": 3,
+    "description": "A blue form-fitted poloshirt made out of a polyester wool blend.",
+    "price": 499,
+    "img": "https://www.na-kd.com/resize/globalassets/ribbed_long_sleeved_turtle_neck_sweater-1044-000229-0003_0076.jpg?ref=D78DE6995E&quality=80&sharpen=0.3&width=846"
+  },
+  "product4": {
+    "name": "White Fluffy Knitted Sweater",
+    "productNumber": 4,
+    "description": "A white knitted sweater made out of polyester. The sweater has a poloneck and long arms.",
+    "price": 99,
+    "img": "https://www.na-kd.com/resize/globalassets/fluffy_knitted_turtleneck_sweater_1100-006686-0260_02.jpeg?ref=D2FED377B3&quality=80&sharpen=0.3&width=846"
+  },
+  "product5": {
+    "name": "Black and White Knitted Cardigan",
+    "productNumber": 5,
+    "description": "A knitted cardigan with a black and white wave pattern.",
+    "price": 49,
+    "img": "https://www.na-kd.com/resize/globalassets/nakd_wavy_knitted_collar_cardigan_1018-009019-0041_01c.jpg?ref=E1D056A710&quality=80&sharpen=0.3&width=846"
+  },
+  "product6": {
+    "name": "Black and White Knitted Sweater",
+    "productNumber": 6,
+    "description": "A knitted sweater made out of a polyester and wool blend in an oversized fit with black and white stripes",
+    "price": 149,
+    "img": "https://www.na-kd.com/resize/globalassets/nakd_knitted_striped_sweater-1100-006467-11230058.jpg?ref=E0406B1DE9&quality=80&sharpen=0.3&width=846"
+  },
+  "product7": {
+    "name": "Oversized Black Blazer",
+    "productNumber": 7,
+    "description": "An oversized black blazer made out of recycled polyseter.",
+    "price": 69,
+    "img": "https://www.na-kd.com/resize/globalassets/nakd_oversized_twill_blazer_1594-000703-0002_02.jpg?ref=13FBDA35F4&quality=80&sharpen=0.3&width=846"
+  },
+  "product8": {
+    "name": "Black Tank Top",
+    "productNumber": 8,
+    "description": "A black tank top with spaghetti straps",
+    "price": 79,
+    "img": "https://www.na-kd.com/resize/globalassets/nakd_spaghetti_strap_singlet_1100-006422-0002_27673.jpg?ref=577112B196&quality=80&sharpen=0.3&width=846"
+  },
+  "product9": {
+    "name": "Oversized White Tshirt",
+    "productNumber": 9,
+    "description": "A white tshirt made out of 100% ecocertified cotton in an oversized fit.",
+    "price": 189,
+    "img": "https://www.na-kd.com/resize/globalassets/nakd_oversized_3_4_sleeve_tee_1660-000577-0001_01a_2_r.jpg?ref=221808554E&quality=80&sharpen=0.3&width=846"
+  },
+  "product10": {
+    "name": "Ribbed Black Tank Top",
+    "productNumber": 10,
+    "description": "A cropped black tank top with tie detail at the waist",
+    "price": 259,
+    "img": "https://www.na-kd.com/resize/globalassets/nakd_wrap_detail_rib_singlet_1100-005105-0002_05g.jpg?ref=A3DD25BDEF&quality=80&sharpen=0.3&width=846"
+  }
+}
