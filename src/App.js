@@ -1,11 +1,12 @@
 import { Fragment } from "react";
 import "./App.css";
 import Hero from "./Hero";
+import DropdownMenu from "./DropdownMenu.jsx";
 
 function App() {
   return (
     <Fragment>
-      <div className="App">HEJ HEJ</div>
+      <DropdownMenu />
       <Hero />
     </Fragment>
   );
