@@ -1,35 +1,19 @@
-import { useState } from "react";
-import { NavDropdown, Nav } from "react-bootstrap";
-import "./DropdownMenu.css";
+import React from "react";
+import Dropdown from "rsuite/Dropdown";
+import "rsuite/dist/rsuite.min.css";
 
-function DropdownMenu() {
-  const [showSubMenu, setShowSubMenu] = useState(false);
-
-  const handleSubMenuClick = () => {
-    setShowSubMenu(!showSubMenu);
-  };
-
+function Nav() {
   return (
-    <>
-      <Nav>
-        <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-          <NavDropdown.Item onClick={handleSubMenuClick}>
-            Action
-          </NavDropdown.Item>
-          {showSubMenu && (
-            <div className="submenu">
-              <div>
-                <NavDropdown.Item>Submenu Item 1</NavDropdown.Item>
-              </div>
-              <div>
-                <NavDropdown.Item>Submenu Item 2</NavDropdown.Item>
-              </div>
-            </div>
-          )}
-        </NavDropdown>
-      </Nav>
-    </>
+    <div>
+      <Dropdown title="Meny" trigger="hover">
+        <Dropdown.Item>Home</Dropdown.Item>
+        <Dropdown.Menu title="Kategorier">
+          <Dropdown.Item>Sub 1</Dropdown.Item>
+          <Dropdown.Item>Sub 2</Dropdown.Item>
+        </Dropdown.Menu>
+      </Dropdown>
+    </div>
   );
 }
 
-export default DropdownMenu;
+export default Nav;

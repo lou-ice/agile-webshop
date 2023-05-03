@@ -7,25 +7,27 @@ import DropdownMenu from "./DropdownMenu";
 function Header() {
   const brandName = "Cool Fashion";
   return (
-    <Navbar bg="light" expand="lg">
-      <Container>
-        <Navbar.Brand>{brandName}</Navbar.Brand>
-        <Nav className="me-auto">
-          <Nav.Item>
-            <DropdownMenu />
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link>Link 1</Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link>Link 2</Nav.Link>
-          </Nav.Item>
-        </Nav>
-        <Form>
-          <Form.Control type="search" placeholder="Search" className="me-4" />
-        </Form>
-      </Container>
-    </Navbar>
+    <div>
+      <Navbar bg="light" expand="lg">
+        <Container>
+          <Navbar.Brand>{brandName}</Navbar.Brand>
+          <Nav className="me-auto">
+            <Nav.Item>
+              <DropdownMenu />
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link>Link 1</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link>Link 2</Nav.Link>
+            </Nav.Item>
+          </Nav>
+          <Form>
+            <Form.Control type="search" placeholder="Search" className="me-4" />
+          </Form>
+        </Container>
+      </Navbar>
+    </div>
   );
 }
 
