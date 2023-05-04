@@ -1,6 +1,7 @@
 import React from "react";
 import Dropdown from "rsuite/Dropdown";
 import "rsuite/dist/rsuite.min.css";
+import "../css/DropdownMenu.css";
 
 function Nav() {
   return (
