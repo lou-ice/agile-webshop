@@ -6,6 +6,9 @@ a {
 a:hover {
   color: rgb(134, 134, 134);
 }
+a:visited {
+  color: #000000;
+}
 
 .dropdown-menu li {
   position: relative;
