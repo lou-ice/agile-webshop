@@ -8,6 +8,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React, { useRef, useState, useEffect } from "react";
 import { firestore } from "./firebase";
 import { addDoc, collection, getDocs } from "@firebase/firestore";
+import ContactForm from "./components/ContactForm";
 
 function App() {
   const [product, setProduct] = useState([]);
@@ -31,6 +32,7 @@ function App() {
       <Routes>
         <Route index element={<Hero />} />
         <Route path="adminupload" element={<AdminUpload />} />
+        <Route path="contactForm" element={<ContactForm />} />
       </Routes>
     </BrowserRouter>
   );

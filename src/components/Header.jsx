@@ -3,7 +3,6 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Form from "react-bootstrap/Form";
 import DropdownMenu from "./DropdownMenu";
-import AdminUpload from "./adminupload";
 
 function Header() {
   const brandName = "Cool Fashion";
@@ -17,7 +16,7 @@ function Header() {
               <DropdownMenu />
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link>Link 1</Nav.Link>
+              <Nav.Link href="/ContactForm"> Kundservice</Nav.Link>
             </Nav.Item>
             <Nav.Item>
               <Nav.Link href="/adminupload"> Admin</Nav.Link>
