@@ -3,7 +3,8 @@ import classes from "../css/Hero.module.css";
 
 const Hero = (props) => {
   let [image, setImage] = useState(null);
-  console.log(image);
+  // console.log(image);
+
   /**
    * Fetch data from API and update image state
    */
