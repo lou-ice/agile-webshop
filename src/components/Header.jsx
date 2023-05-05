@@ -3,6 +3,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Form from "react-bootstrap/Form";
 import DropdownMenu from "./DropdownMenu";
+import { Link } from "react-router-dom";
 
 function Header() {
   const brandName = "Cool Fashion";
@@ -16,7 +17,9 @@ function Header() {
               <DropdownMenu />
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link>Link 1</Nav.Link>
+              <Link to="contact" className="navLink">
+                Kundservice
+              </Link>
             </Nav.Item>
             <Nav.Item>
               <Nav.Link>Link 2</Nav.Link>
