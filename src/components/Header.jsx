@@ -21,9 +21,7 @@ function Header() {
               <Nav.Link>Link 1</Nav.Link>
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link>
-                <Link to="/adminupload">admin</Link>
-              </Nav.Link>
+              <Nav.Link href="/adminupload"> Admin</Nav.Link>
             </Nav.Item>
           </Nav>
           <Form>
