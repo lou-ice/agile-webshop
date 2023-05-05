@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import { firestore } from "../firebase";
-
+import "../css/adminupload.css";
 import { addDoc, collection, getDocs } from "@firebase/firestore";
 
 function AdminUpload() {
@@ -41,7 +41,7 @@ function AdminUpload() {
     fetchPost();
   }, []);
   return (
-    <div>
+    <div className="body">
       <form className="form" onSubmit={handleSave}>
         <label htmlFor="">Kategori</label>
         <input type="text" ref={kategori} />
@@ -51,8 +51,11 @@ function AdminUpload() {
         <textarea type="text" ref={info} />
         <label htmlFor="">Bildlänk</label>
         <input type="text" ref={pic} />
-        <button type="submit">Submit</button>
+        <button className="submit" type="submit">
+          Submit
+        </button>
       </form>
+      <hr />
       <div className="">
         {product?.map((product, i) => (
           <p key={i}>
