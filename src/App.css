@@ -3,6 +3,12 @@
 body {
   font-family: "Josefin Sans", cursive;
 }
+
+.form {
+  display: grid;
+}
+
+/*
 .image {
   opacity: 1;
   display: block;
@@ -13,11 +19,6 @@ body {
 .image:hover {
   opacity: 0.6;
 }
-.form {
-  display: grid;
-}
-
-/*
 @import url("https://fonts.googleapis.com/css2?family=Tinos&display=swap");
 
 body {

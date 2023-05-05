@@ -58,7 +58,7 @@ function AdminUpload() {
           <p key={i}>
             {product.kategori}: {product.produktnamn}
             <br /> {product.info} <br />
-            <img src={product.bild} alt="" width={"100px"} />
+            <img className="image" src={product.bild} alt="" width={"100px"} />
           </p>
         ))}
       </div>
