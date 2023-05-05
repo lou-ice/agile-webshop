@@ -43,18 +43,30 @@ function AdminUpload() {
   return (
     <div className="body">
       <form className="form" onSubmit={handleSave}>
-        <label htmlFor="">Kategori</label>
-        <input type="text" ref={kategori} />
-        <label htmlFor="">Produktnamn</label>
-        <input type="text" ref={pname} />
-        <label htmlFor="">Info</label>
-        <textarea type="text" ref={info} />
-        <label htmlFor="">Bildlänk</label>
-        <input type="text" ref={pic} />
-        <button className="submit" type="submit">
-          Submit
-        </button>
+        <fieldset className="border p-4">
+          <legend className="float-none w-auto">Lägg till produkt</legend>
+          <label className="form-label" htmlFor="">
+            Kategori
+          </label>
+          <input className="form-control" type="text" ref={kategori} />
+          <label className="form-label" htmlFor="">
+            Produktnamn
+          </label>
+          <input className="form-control" type="text" ref={pname} />
+          <label className="form-label" htmlFor="">
+            Info
+          </label>
+          <textarea className="form-control" type="text" ref={info} />
+          <label className="form-label" htmlFor="">
+            Bildlänk
+          </label>
+          <input className="form-control" type="text" ref={pic} />
+          <button className="btn btn-primary submit" type="submit">
+            Submit
+          </button>
+        </fieldset>
       </form>
+
       <hr />
       <div className="">
         {product?.map((product, i) => (
