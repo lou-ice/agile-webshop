@@ -5,9 +5,9 @@ import "rsuite/dist/rsuite.min.css";
 function Nav() {
   return (
     <div>
-      <Dropdown title="Meny" trigger="hover">
+      <Dropdown title="Meny" trigger="click">
         <Dropdown.Item>Home</Dropdown.Item>
-        <Dropdown.Menu title="Kategorier">
+        <Dropdown.Menu title="Kategorier" trigger="click">
           <Dropdown.Item>Sub 1</Dropdown.Item>
           <Dropdown.Item>Sub 2</Dropdown.Item>
         </Dropdown.Menu>
