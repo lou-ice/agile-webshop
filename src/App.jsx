@@ -11,6 +11,7 @@ import { collection, getDocs } from "@firebase/firestore";
 function App() {
   const [product, setProduct] = useState([]);
   console.log(product);
+
   const fetchPost = async () => {
     await getDocs(collection(firestore, "products")).then((querySnapshot) => {
       const newData = querySnapshot.docs.map((doc) => ({
@@ -26,14 +27,18 @@ function App() {
   }, []);
 
   return (
-    <BrowserRouter>
-      <Header />
-      <Routes>
-        <Route index element={<Hero />} />
-        <Route path="adminupload" element={<AdminUpload />} />
-        <Route path="contactForm" element={<ContactForm />} />
-      </Routes>
-    </BrowserRouter>
+    <>
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route index element={<Hero />} />
+          <Route
+            path="adminupload"
+            element={<AdminUpload product={product} />}/>
+          <Route path="contactForm" element={<ContactForm />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 

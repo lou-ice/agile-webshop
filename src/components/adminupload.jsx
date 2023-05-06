@@ -4,13 +4,13 @@ import { addDoc, collection, getDocs } from "@firebase/firestore";
 import ProductCard from "../components/ProductCard";
 import "../css/adminupload.css";
 
-function AdminUpload() {
-  const [product, setProduct] = useState([]);
+function AdminUpload({ product }) {
   const kategori = useRef();
   const pname = useRef();
   const info = useRef();
   const pic = useRef();
   const ref = collection(firestore, "products");
+
   const handleSave = async (e) => {
     e.preventDefault();
 
@@ -27,6 +27,11 @@ function AdminUpload() {
       console.log(e);
     }
   };
+
+  /* 
+  // State is passed as a prop to be able to share the same state between different components
+  const [product, setProduct] = useState([]);
+  
   const fetchPost = async () => {
     await getDocs(collection(firestore, "products")).then((querySnapshot) => {
       const newData = querySnapshot.docs.map((doc) => ({
@@ -41,6 +46,7 @@ function AdminUpload() {
   useEffect(() => {
     fetchPost();
   }, []);
+ */
 
   return (
     <div className="body">
@@ -74,14 +80,8 @@ function AdminUpload() {
         Tillagda produkter:
       </div>
       <div className="display-products">
-        {product?.map((product, i) => (
-          <ProductCard
-            key={i}
-            category={product.kategori}
-            productName={product.produktnamn}
-            productInfo={product.info}
-            productImage={product.bild}
-          />
+        {product?.map((product) => (
+          <ProductCard key={product.id} product={product} />
         ))}
       </div>
     </div>

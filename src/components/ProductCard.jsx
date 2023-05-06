@@ -1,14 +1,14 @@
 import Card from "react-bootstrap/Card";
 import "../css/ProductCard.css";
 
-function ProductCard({ category, productName, productInfo, productImage }) {
+function ProductCard({ product }) {
   return (
     <Card className="card">
-      <Card.Img variant="top" src={productImage} alt={productName} />
+      <Card.Img variant="top" src={product.bild} alt={product.produktnamn} />
       <Card.Body>
-        <Card.Title>{productName}</Card.Title>
-        <Card.Text>{category}</Card.Text>
-        <Card.Text>{productInfo}</Card.Text>
+        <Card.Title>{product.produktnamn}</Card.Title>
+        <Card.Text>{product.kategori}</Card.Text>
+        <Card.Text>{product.info}</Card.Text>
       </Card.Body>
     </Card>
   );
