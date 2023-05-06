@@ -27,18 +27,14 @@ function App() {
   }, []);
 
   return (
-    <>
-      <BrowserRouter>
-        <Header />
-        <Routes>
-          <Route index element={<Hero />} />
-          <Route
-            path="adminupload"
-            element={<AdminUpload product={product} />}/>
-          <Route path="contactForm" element={<ContactForm />} />
-        </Routes>
-      </BrowserRouter>
-    </>
+    <BrowserRouter>
+      <Header />
+      <Routes>
+        <Route index element={<Hero />} />
+        <Route path="adminupload" element={<AdminUpload product={product} />} />
+        <Route path="contactForm" element={<ContactForm />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

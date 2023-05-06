@@ -3,7 +3,7 @@ import "../css/ProductCard.css";
 
 function ProductCard({ product }) {
   return (
-    <Card className="card">
+    <Card>
       <Card.Img variant="top" src={product.bild} alt={product.produktnamn} />
       <Card.Body>
         <Card.Title>{product.produktnamn}</Card.Title>
