@@ -2,7 +2,7 @@ import React, { useRef, useState, useEffect } from "react";
 import { firestore } from "../firebase";
 import { addDoc, collection, getDocs } from "@firebase/firestore";
 import ProductCard from "../components/ProductCard";
-import "../css/AdminUpload.css";
+import "../css/adminupload.css";
 
 function AdminUpload() {
   const [product, setProduct] = useState([]);

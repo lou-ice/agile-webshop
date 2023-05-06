@@ -1,7 +1,7 @@
 import "./App.css";
 import Hero from "./components/Hero";
 import Header from "./components/Header";
-import AdminUpload from "./components/AdminUpload";
+import AdminUpload from "./components/adminupload";
 import ContactForm from "./components/ContactForm";
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -30,7 +30,7 @@ function App() {
       <Header />
       <Routes>
         <Route index element={<Hero />} />
-        <Route path="AdminUpload" element={<AdminUpload />} />
+        <Route path="adminupload" element={<AdminUpload />} />
         <Route path="contactForm" element={<ContactForm />} />
       </Routes>
     </BrowserRouter>
