@@ -2,14 +2,13 @@ import React from "react";
 import Dropdown from "rsuite/Dropdown";
 import "rsuite/dist/rsuite.min.css";
 import "../css/DropdownMenu.css";
-import { Outlet, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Nav() {
   return (
     <div>
       <Dropdown title="Meny" trigger="click">
         <Dropdown.Item>
-          {" "}
           <Link to="/">Home</Link>
         </Dropdown.Item>
         <Dropdown.Menu title="Kategorier" trigger="click">

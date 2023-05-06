@@ -1,7 +1,8 @@
 import React, { useRef, useState, useEffect } from "react";
 import { firestore } from "../firebase";
-import "../css/adminupload.css";
 import { addDoc, collection, getDocs } from "@firebase/firestore";
+import ProductCard from "../components/ProductCard";
+import "../css/AdminUpload.css";
 
 function AdminUpload() {
   const [product, setProduct] = useState([]);
@@ -40,6 +41,7 @@ function AdminUpload() {
   useEffect(() => {
     fetchPost();
   }, []);
+
   return (
     <div className="body">
       <form className="form" onSubmit={handleSave}>
@@ -61,20 +63,25 @@ function AdminUpload() {
             Bildlänk
           </label>
           <input className="form-control" type="text" ref={pic} />
-          <button className="btn btn-primary submit" type="submit">
+          <button className="btn btn-dark submit" type="submit">
             Submit
           </button>
         </fieldset>
       </form>
 
       <hr />
-      <div className="">
+      <div className="d-flex justify-content-center h5">
+        Tillagda produkter:
+      </div>
+      <div className="display-products">
         {product?.map((product, i) => (
-          <p key={i}>
-            {product.kategori}: {product.produktnamn}
-            <br /> {product.info} <br />
-            <img className="image" src={product.bild} alt="" width={"100px"} />
-          </p>
+          <ProductCard
+            key={i}
+            category={product.kategori}
+            productName={product.produktnamn}
+            productInfo={product.info}
+            productImage={product.bild}
+          />
         ))}
       </div>
     </div>

@@ -1,0 +1,17 @@
+.display-products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 4rem 2rem 4rem;
+}
+
+.card {
+  width: 20rem;
+  border-radius: 0;
+  border: 1px solid black;
+  margin: 1rem;
+}
+
+.card-img-top {
+  border-radius: 0;
+}

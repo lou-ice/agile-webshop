@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Josefin+Sans");
 
-body {
+* {
   font-family: "Josefin Sans", cursive;
 }
 
@@ -15,9 +15,10 @@ body {
 .image:hover {
   opacity: 0.6;
 }
+
 @import url("https://fonts.googleapis.com/css2?family=Tinos&display=swap");
 
-body {
+* {
   font-family: "Tinos", serif;
 }
 */

@@ -1,11 +1,13 @@
 .body {
   margin: 20px;
 }
+
 .form {
   display: grid;
   width: 500px;
   margin: auto;
 }
+
 .submit {
   margin-top: 10px;
   margin-bottom: 10px;
@@ -14,4 +16,9 @@
 label {
   margin-top: 10px;
   font-weight: bold;
+}
+
+.card {
+  width: 15rem;
+  border: 1px solid lightgrey;
 }
