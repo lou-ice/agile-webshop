@@ -6,9 +6,9 @@
 }
 
 .card {
-  width: 20rem;
+  width: 18rem;
   border-radius: 0;
-  border: 1px solid black;
+  border: 1px solid rgb(155, 155, 155);
   margin: 1rem;
 }
 

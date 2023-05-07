@@ -1,5 +1,4 @@
 import "./App.css";
-import Hero from "./components/Hero";
 import Header from "./components/Header";
 import AdminUpload from "./components/adminupload";
 import ContactForm from "./components/ContactForm";
@@ -8,6 +7,7 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { firestore } from "./firebase";
 import { collection, getDocs } from "@firebase/firestore";
+import FrontPage from "./components/FrontPage";
 
 function App() {
   const [product, setProduct] = useState([]);
@@ -31,7 +31,7 @@ function App() {
     <BrowserRouter>
       <Header />
       <Routes>
-        <Route index element={<Hero />} />
+        <Route index element={<FrontPage />} />
         <Route path="adminupload" element={<AdminUpload product={product} />} />
         <Route path="contactForm" element={<ContactForm />} />
         <Route path="productpage" element={<ProductPage product={product} />} />

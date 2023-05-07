@@ -1,13 +1,15 @@
 import ProductCard from "./ProductCard";
 
-function ProductPage(props) {
-  const { product } = props;
+function ProductPage({ product }) {
   return (
-    <div className="grid">
-      {product.map((product) => {
-        return <ProductCard product={product}></ProductCard>;
-      })}
-    </div>
+    <>
+      <div className="d-flex justify-content-center h3 mt-5">Produkter</div>
+      <div className="display-products">
+        {product.map((product, i) => {
+          return <ProductCard key={product.id} product={product} />;
+        })}
+      </div>
+    </>
   );
 }
 

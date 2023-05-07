@@ -50,7 +50,7 @@ function AdminUpload({ product }) {
 
   return (
     <div className="body">
-      <form className="form" onSubmit={handleSave}>
+      <form className="form mt-5" onSubmit={handleSave}>
         <fieldset className="border p-4">
           <legend className="float-none w-auto">Lägg till produkt</legend>
           <label className="form-label" htmlFor="">
