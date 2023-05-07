@@ -4,6 +4,12 @@
   font-family: "Josefin Sans", cursive;
 }
 
+.grid {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  text-align: left;
+}
+
 /*
 .image {
   opacity: 1;

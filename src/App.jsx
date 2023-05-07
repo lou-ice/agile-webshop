@@ -3,6 +3,7 @@ import Hero from "./components/Hero";
 import Header from "./components/Header";
 import AdminUpload from "./components/adminupload";
 import ContactForm from "./components/ContactForm";
+import ProductPage from "./components/ProductPage";
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { firestore } from "./firebase";
@@ -33,6 +34,7 @@ function App() {
         <Route index element={<Hero />} />
         <Route path="adminupload" element={<AdminUpload product={product} />} />
         <Route path="contactForm" element={<ContactForm />} />
+        <Route path="productpage" element={<ProductPage product={product} />} />
       </Routes>
     </BrowserRouter>
   );

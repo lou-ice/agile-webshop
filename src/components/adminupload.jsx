@@ -1,6 +1,6 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef } from "react";
 import { firestore } from "../firebase";
-import { addDoc, collection, getDocs } from "@firebase/firestore";
+import { addDoc, collection } from "@firebase/firestore";
 import ProductCard from "../components/ProductCard";
 import "../css/adminupload.css";
 
