@@ -4,7 +4,7 @@ import Navbar from "react-bootstrap/Navbar";
 import Form from "react-bootstrap/Form";
 import DropdownMenu from "./DropdownMenu";
 
-function Header() {
+function Header({ product }) {
   const brandName = "Cool Fashion";
   return (
     <div>

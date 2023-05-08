@@ -11,7 +11,6 @@ import FrontPage from "./components/FrontPage";
 
 function App() {
   const [product, setProduct] = useState([]);
-  console.log(product);
 
   const fetchPost = async () => {
     await getDocs(collection(firestore, "products")).then((querySnapshot) => {
@@ -29,7 +28,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Header />
+      <Header product={product} />
       <Routes>
         <Route index element={<FrontPage />} />
         <Route path="adminupload" element={<AdminUpload product={product} />} />
