@@ -30,7 +30,7 @@ function App() {
     <BrowserRouter>
       <Header product={product} />
       <Routes>
-        <Route index element={<FrontPage />} />
+        <Route index element={<FrontPage product={product} />} />
         <Route path="adminupload" element={<AdminUpload product={product} />} />
         <Route path="contactForm" element={<ContactForm />} />
         <Route path="productpage" element={<ProductPage product={product} />} />
