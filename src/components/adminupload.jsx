@@ -10,6 +10,10 @@ function AdminUpload({ product }) {
   const info = useRef();
   const pic = useRef();
   const ref = collection(firestore, "products");
+  const time = { date: new Date() };
+  console.log(time);
+  const number = product.length + 100001;
+  console.log(number);
 
   const handleSave = async (e) => {
     e.preventDefault();
@@ -19,6 +23,7 @@ function AdminUpload({ product }) {
       produktnamn: pname.current.value,
       info: info.current.value,
       bild: pic.current.value,
+      articlenumber: number,
     };
 
     try {
@@ -69,6 +74,7 @@ function AdminUpload({ product }) {
             Bildlänk
           </label>
           <input className="form-control" type="text" ref={pic} />
+
           <button className="btn btn-dark submit" type="submit">
             Submit
           </button>
