@@ -3,7 +3,6 @@ import classes from "../css/Hero.module.css";
 
 const Hero = () => {
   let [image, setImage] = useState(null);
-  // console.log(image);
 
   /**
    * Fetch data from API and update image state
@@ -27,7 +26,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className={classes.hero}>
+    <div className={classes.hero} >
       <div className={classes["main-image"]}>
         {image && <img className="image" src={image} alt=""></img>}
       </div>
