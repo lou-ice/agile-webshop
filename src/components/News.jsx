@@ -8,7 +8,7 @@ function News({ product }) {
     let tempProducts = product.sort(
       (a, b) => a.articlenumber - b.articlenumber
     );
-    setLatestProducts(tempProducts.slice(-3));
+    setLatestProducts(tempProducts.slice(-3).reverse());
   }, [product]);
   return (
     <>
