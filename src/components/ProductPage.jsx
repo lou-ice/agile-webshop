@@ -1,25 +1,32 @@
 import ProductCard from "./ProductCard";
-
-import React, { useState } from "react";
+import { useLocation } from "react-router-dom";
+import Dropdown from "rsuite/Dropdown";
+import React, { useEffect, useState } from "react";
 
 function ProductPage({ product }) {
-  const [value, setValue] = useState(""); //Söksträngen
+  const location = useLocation();
+
+  const [value, setValue] = useState(location?.state?.kategori); //Söksträngen
   const onChange = (event) => {
-    setValue(event.target.value);
+    setValue(event);
   };
+
+  useEffect(() => {
+    setValue(location?.state?.kategori);
+  }, [location.state?.kategori]);
+
+  console.log(location?.state?.kategori);
   console.log(value);
   return (
     <>
-      <select
-        type="text"
-        className="form-control rounded"
-        placeholder="Kategorier"
-        value={value}
-        onChange={onChange}
-      >
-        <option value="Tröja">Tröjor</option>
-        <option value="Byxa">Byxor</option>
-      </select>
+      <div className=" m-5">
+        <Dropdown size="lg" title={value} onSelect={onChange} activeKey={value}>
+          <Dropdown.Item eventKey="Tröja">Tröjor</Dropdown.Item>
+          <Dropdown.Item eventKey="Byxa">Byxor</Dropdown.Item>
+          <Dropdown.Item eventKey="Klänning">Klänningar</Dropdown.Item>
+          <Dropdown.Item eventKey="Skor">Skor</Dropdown.Item>
+        </Dropdown>
+      </div>
 
       <div className="d-flex justify-content-center h3 mt-5">Produkter</div>
       <div className="display-products">
