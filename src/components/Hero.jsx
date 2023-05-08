@@ -27,9 +27,11 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className={classes.hero}>
-      <div className={classes["main-image"]}>
-        {image && <img className="image" src={image} alt=""></img>}
+    <div>
+      <div className={classes.hero}>
+        <div className={classes["main-image"]}>
+          {image && <img className="image" src={image} alt=""></img>}
+        </div>{" "}
       </div>
     </div>
   );

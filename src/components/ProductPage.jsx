@@ -21,9 +21,9 @@ function ProductPage({ product }) {
     <>
       <div className=" m-5">
         <Dropdown size="lg" title={value} onSelect={onChange} activeKey={value}>
-          <Dropdown.Item eventKey="Tröja">Tröjor</Dropdown.Item>
-          <Dropdown.Item eventKey="Byxa">Byxor</Dropdown.Item>
-          <Dropdown.Item eventKey="Klänning">Klänningar</Dropdown.Item>
+          <Dropdown.Item eventKey="Tröjor">Tröjor</Dropdown.Item>
+          <Dropdown.Item eventKey="Byxor">Byxor</Dropdown.Item>
+          <Dropdown.Item eventKey="Klänningar">Klänningar</Dropdown.Item>
           <Dropdown.Item eventKey="Skor">Skor</Dropdown.Item>
         </Dropdown>
       </div>
