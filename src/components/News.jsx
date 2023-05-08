@@ -5,7 +5,10 @@ function News({ product }) {
   const [latestProducts, setLatestProducts] = useState([]);
 
   useEffect(() => {
-    setLatestProducts(product.slice(-3));
+    let tempProducts = product.sort(
+      (a, b) => a.articlenumber - b.articlenumber
+    );
+    setLatestProducts(tempProducts.slice(-3));
   }, [product]);
   return (
     <>
