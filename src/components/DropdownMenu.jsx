@@ -13,9 +13,17 @@ function Nav() {
         </Dropdown.Item>
         <Dropdown.Menu title="Kategorier" trigger="click">
           <Dropdown.Item>
-            <Link to="productpage">Produkter</Link>
+            <Link to="productpage" state={{kategori: "Tröja"}}>Tröjor</Link>
           </Dropdown.Item>
-          <Dropdown.Item>Sub 2</Dropdown.Item>
+          <Dropdown.Item>
+            <Link to="productpage" state={{kategori: "Byxa"}}>Byxor</Link>
+          </Dropdown.Item>
+          <Dropdown.Item>
+            <Link to="productpage" state={{kategori: "Klänning"}}>Klänningar</Link>
+          </Dropdown.Item>
+          <Dropdown.Item>
+            <Link to="productpage" state={{kategori: "Skor"}}>Skor</Link>
+          </Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>
     </div>
