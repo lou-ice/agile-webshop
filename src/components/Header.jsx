@@ -4,7 +4,7 @@ import Navbar from "react-bootstrap/Navbar";
 import Form from "react-bootstrap/Form";
 import DropdownMenu from "./DropdownMenu";
 
-function Header({ product }) {
+function Header({ product, kategorier }) {
   const brandName = "Cool Fashion";
   return (
     <div>
@@ -13,7 +13,7 @@ function Header({ product }) {
           <Navbar.Brand>{brandName}</Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Item>
-              <DropdownMenu />
+              <DropdownMenu kategorier={kategorier} />
             </Nav.Item>
             <Nav.Item>
               <Nav.Link href="/ContactForm"> Kundservice</Nav.Link>
