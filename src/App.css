@@ -3,6 +3,17 @@
 * {
   font-family: "Josefin Sans", cursive;
 }
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.katknapp {
+  margin: 20px;
+  text-align: center;
+}
 
 /*
 .grid {

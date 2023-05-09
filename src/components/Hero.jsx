@@ -28,6 +28,15 @@ const Hero = () => {
 
   return (
     <div>
+      <div className="center">
+        <fieldset className="border p-5">
+          <legend className="float-none w-auto">Någon text</legend>
+          <h1>Någon text</h1>
+          <br />
+          <button className="btn btn-dark">Call to action</button>
+        </fieldset>
+      </div>
+
       <div className={classes.hero}>
         <div className={classes["main-image"]}>
           {image && <img className="image" src={image} alt=""></img>}

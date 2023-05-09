@@ -1,10 +1,12 @@
 import Hero from "./Hero";
 import News from "./News";
+import CatButtons from "./CatButtons";
 
-function FrontPage({ product }) {
+function FrontPage({ product, kategorier }) {
   return (
     <div>
       <Hero />
+      <CatButtons kategorier={kategorier} />
       <News product={product} />
     </div>
   );

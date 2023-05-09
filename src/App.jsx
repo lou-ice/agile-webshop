@@ -22,18 +22,32 @@ function App() {
     });
   };
 
+  console.log(product);
   useEffect(() => {
     fetchPost();
   }, []);
 
+  const kategorier = product.reduce((kategorier, currentValue) => {
+    if (!kategorier.includes(currentValue.kategori)) {
+      kategorier.push(currentValue.kategori);
+    }
+    return kategorier;
+  }, []);
+
   return (
     <BrowserRouter>
-      <Header product={product} />
+      <Header product={product} kategorier={kategorier} />
       <Routes>
-        <Route index element={<FrontPage product={product} />} />
+        <Route
+          path="/"
+          element={<FrontPage product={product} kategorier={kategorier} />}
+        />
         <Route path="adminupload" element={<AdminUpload product={product} />} />
         <Route path="contactForm" element={<ContactForm />} />
-        <Route path="productpage" element={<ProductPage product={product} />} />
+        <Route
+          path="productpage"
+          element={<ProductPage product={product} kategorier={kategorier} />}
+        />
       </Routes>
     </BrowserRouter>
   );

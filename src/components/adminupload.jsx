@@ -33,26 +33,6 @@ function AdminUpload({ product }) {
     }
   };
 
-  /* 
-  // State is passed as a prop to be able to share the same state between different components
-  const [product, setProduct] = useState([]);
-  
-  const fetchPost = async () => {
-    await getDocs(collection(firestore, "products")).then((querySnapshot) => {
-      const newData = querySnapshot.docs.map((doc) => ({
-        ...doc.data(),
-        id: doc.id,
-      }));
-      setProduct(newData);
-      console.log(newData);
-    });
-  };
-
-  useEffect(() => {
-    fetchPost();
-  }, []);
- */
-
   return (
     <div className="body">
       <form className="form mt-5" onSubmit={handleSave}>
