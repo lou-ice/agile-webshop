@@ -21,8 +21,8 @@ function App() {
       setProduct(newData);
     });
   };
-  
-  console.log(product)
+
+  console.log(product);
   useEffect(() => {
     fetchPost();
   }, []);
@@ -38,10 +38,16 @@ function App() {
     <BrowserRouter>
       <Header product={product} kategorier={kategorier} />
       <Routes>
-        <Route index element={<FrontPage product={product} />} />
+        <Route
+          path="/"
+          element={<FrontPage product={product} kategorier={kategorier} />}
+        />
         <Route path="adminupload" element={<AdminUpload product={product} />} />
         <Route path="contactForm" element={<ContactForm />} />
-        <Route path="productpage" element={<ProductPage product={product} kategorier={kategorier} />} />
+        <Route
+          path="productpage"
+          element={<ProductPage product={product} kategorier={kategorier} />}
+        />
       </Routes>
     </BrowserRouter>
   );
