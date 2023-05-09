@@ -12,6 +12,9 @@ function Nav({kategorier}) {
           <Link to="/">Home</Link>
         </Dropdown.Item>
         <Dropdown.Menu title="Kategorier" trigger="click">
+        <Dropdown.Item key={"all"}>
+            <Link to="productpage" state={{kategori: "Se Alla"}}>{"Se alla"}</Link>
+          </Dropdown.Item>
           {kategorier.map((item)=>(
 
             <Dropdown.Item key={item}>
