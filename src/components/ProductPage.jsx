@@ -8,8 +8,7 @@ function ProductPage({ product, kategorier }) {
 
   const [value, setValue] = useState(location?.state?.kategori); //Söksträngen
   const onChange = (event) => {
-      setValue(event);
-    
+    setValue(event);
   };
 
   useEffect(() => {
@@ -20,9 +19,9 @@ function ProductPage({ product, kategorier }) {
   console.log(value);
   return (
     <>
-      <div className=" m-5">
+      <div className="m-5">
         <Dropdown size="lg" title={value} onSelect={onChange} activeKey={value}>
-        <Dropdown.Item key="all" eventKey={"Se Alla"}>
+          <Dropdown.Item key="all" eventKey={"Se alla"}>
             Se alla
           </Dropdown.Item>
           {kategorier.map((item) => (
@@ -33,14 +32,14 @@ function ProductPage({ product, kategorier }) {
         </Dropdown>
       </div>
 
-      <div className="d-flex justify-content-center h3 mt-5">
-      {value !== "Se Alla" ? value.toUpperCase() : "ALLA PRODUKTER"}
+      <div className="d-flex justify-content-center h3 mt-5 mb-3">
+        {value !== "Se alla" ? value.toUpperCase() : "ALLA PRODUKTER"}
       </div>
       <div className="display-products">
-        {product.map((product, i) => {
-          if (value === "Se Alla" || product.kategori.includes(value)) {
+        {product.map((product) => {
+          if (value === "Se alla" || product.kategori.includes(value)) {
             return <ProductCard key={product.id} product={product} />;
-            }
+          }
         })}
       </div>
     </>

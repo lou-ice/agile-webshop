@@ -4,23 +4,23 @@ import { useState } from "react";
 
 function ProductCard({ product }) {
   const [hover, setHover] = useState(false);
-  
-  const mouseOver = () => {
-    setHover(true)
-  }
 
-  const mouseOut = () =>{
-    setHover(false)
-  }
+  const mouseOver = () => {
+    setHover(true);
+  };
+
+  const mouseOut = () => {
+    setHover(false);
+  };
 
   return (
     <Card
-    style={{
-      cursor: "pointer",
-      transform: hover ? "scale(1.05)" : "scale(1)",
-      transition: "transform 0.4s",
-      opacity: hover ? 0.6 : 1,
-    }}
+      style={{
+        cursor: "pointer",
+        transform: hover ? "scale(1.05)" : "scale(1)",
+        transition: "transform 0.4s",
+        opacity: hover ? 0.6 : 1,
+      }}
       onMouseOver={mouseOver}
       onMouseOut={mouseOut}
     >

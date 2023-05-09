@@ -12,7 +12,9 @@ function News({ product }) {
   }, [product]);
   return (
     <>
-      <div className="d-flex justify-content-center h3 mt-4">Nyheter</div>
+      <div className="d-flex justify-content-center text-uppercase h3 mt-4 mb-3">
+        Nyheter
+      </div>
       <div className="display-products">
         {latestProducts?.map((product) => (
           <ProductCard key={product.id} product={product} />

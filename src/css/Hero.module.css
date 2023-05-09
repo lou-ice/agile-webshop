@@ -3,8 +3,10 @@
   height: 500px;
   object-fit: cover;
   object-position: 100% 10%;
-  cursor: pointer 
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
 }
+
 .main-image:hover img {
   transform: scale(0.9);
   transition: all 0.4s ease-in-out;

@@ -6,7 +6,7 @@
 }
 
 .card {
-  width: 18rem;
+  width: 22rem;
   border-radius: 0;
   border: 1px solid rgb(155, 155, 155);
   margin: 1rem;
@@ -14,4 +14,6 @@
 
 .card-img-top {
   border-radius: 0;
+  height: 45vh;
+  object-fit: cover;
 }
