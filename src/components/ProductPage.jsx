@@ -54,7 +54,6 @@ function ProductPage({ product, kategorier }) {
           </Link>
         ))}
       </div>
-
       <div className="d-flex justify-content-center h3 mt-5 mb-3">
         {value !== "Se alla" ? value.toUpperCase() : "ALLA PRODUKTER"}
       </div>
