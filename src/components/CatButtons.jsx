@@ -4,12 +4,8 @@ import "../css/CatButtons.css";
 function CatButtons({ kategorier }) {
   return (
     <div className="katknapp">
-      <Link to="../productpage" state={{ kategori: "Se alla" }}>
-        <button
-          type="button"
-          className="btn btn-outline-secondary katknapp"
-          key={"all"}
-        >
+      <Link to="../productpage" key={"all"} state={{ kategori: "Se alla" }}>
+        <button type="button" className="btn btn-outline-secondary katknapp">
           {"Se alla"}
         </button>
       </Link>
