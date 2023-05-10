@@ -33,7 +33,7 @@ function ProductPage({ product, kategorier }) {
         </Dropdown>
           </div>*/}
       <div className="katknapp">
-        <Link to="../productpage" state={{ kategori: "Se Alla" }}>
+        <Link to="../productpage" state={{ kategori: "Se alla" }}>
           <button
             type="button"
             className="btn btn-outline-secondary katknapp"
