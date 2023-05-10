@@ -4,6 +4,11 @@
   font-family: "Josefin Sans", cursive;
   caret-color: transparent;
 }
+.cart {
+  padding-top: 50px;
+  margin: auto;
+  width: 500px;
+}
 
 /*
 @import url("https://fonts.googleapis.com/css2?family=Tinos&display=swap");

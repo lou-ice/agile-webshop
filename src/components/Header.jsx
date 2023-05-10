@@ -21,10 +21,19 @@ function Header({ kategorier }) {
               <DropdownMenu kategorier={kategorier} />
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link href="/ContactForm">Kundservice</Nav.Link>
+              <Nav.Link as={Link} to="/ContactForm">
+                Kundservice
+              </Nav.Link>
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link href="/adminupload">Admin</Nav.Link>
+              <Nav.Link as={Link} to="/adminupload">
+                Admin
+              </Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link as={Link} to="/cart">
+                Varukorg
+              </Nav.Link>
             </Nav.Item>
           </Nav>
           <Form>
