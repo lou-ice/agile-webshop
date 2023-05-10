@@ -8,6 +8,11 @@
   margin: auto;
 }
 
+.form-control:focus {
+  border-color: #444444;
+  box-shadow: 0 0 0 0.15rem #00000045;
+}
+
 .submit {
   margin-top: 10px;
   margin-bottom: 10px;
