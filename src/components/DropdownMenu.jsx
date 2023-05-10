@@ -12,12 +12,12 @@ function Nav({ kategorier }) {
           <Dropdown.Item>Hem</Dropdown.Item>
         </Link>
         <Dropdown.Menu title="Kategorier" trigger="click">
-          <Link to="productpage" state={{ kategori: "Se alla" }}>
-            <Dropdown.Item key={"all"}>{"Se alla"}</Dropdown.Item>
+          <Link to="productpage" key={"all"} state={{ kategori: "Se alla" }}>
+            <Dropdown.Item>{"Se alla"}</Dropdown.Item>
           </Link>
           {kategorier.map((item) => (
-            <Link to="productpage" state={{ kategori: item }}>
-              <Dropdown.Item key={item}>{item}</Dropdown.Item>
+            <Link to="productpage" key={item} state={{ kategori: item }}>
+              <Dropdown.Item>{item}</Dropdown.Item>
             </Link>
           ))}
         </Dropdown.Menu>
