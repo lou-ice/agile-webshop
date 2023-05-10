@@ -14,18 +14,23 @@ function ProductCard({ product }) {
   };
 
   return (
-    <Card
-      style={{
-        cursor: "pointer",
-        transform: hover ? "scale(1.05)" : "scale(1)",
-        transition: "transform 0.4s",
-        opacity: hover ? 0.6 : 1,
-      }}
-      onMouseOver={mouseOver}
-      onMouseOut={mouseOut}
-    >
-      <Card.Img variant="top" src={product.bild} alt={product.produktnamn} />
-      <Card.Body>
+    <Card>
+      <div className="zoom-effect d-flex">
+        <Card.Img
+          style={{
+            cursor: "pointer",
+            transform: hover ? "scale(1.05)" : "scale(1)",
+            transition: "transform 0.4s",
+            opacity: hover ? 0.6 : 1,
+          }}
+          onMouseOver={mouseOver}
+          onMouseOut={mouseOut}
+          variant="top"
+          src={product.bild}
+          alt={product.produktnamn}
+        />
+      </div>
+      <Card.Body className="d-flex flex-column">
         <Card.Title>{product.produktnamn}</Card.Title>
         <Card.Text>{product.kategori}</Card.Text>
         <Card.Text>{product.info}</Card.Text>
