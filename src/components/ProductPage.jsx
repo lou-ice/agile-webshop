@@ -4,7 +4,8 @@ import { useLocation } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-function ProductPage({ product, kategorier }) {
+function ProductPage({ product, kategorier, onAdd, onRemove, cartItems }) {
+  //console.log(product);
   const location = useLocation();
 
   const [value, setValue] = useState(location?.state?.kategori); //Söksträngen
@@ -60,7 +61,17 @@ function ProductPage({ product, kategorier }) {
       <div className="display-products">
         {product.map((product) => {
           if (value === "Se alla" || product.kategori.includes(value)) {
-            return <ProductCard key={product.id} product={product} />;
+            return (
+              <ProductCard
+                key={product.id}
+                product={product}
+                item={cartItems.find(
+                  (x) => x.articlenumber === product.articlenumber
+                )}
+                onAdd={onAdd}
+                onRemove={onRemove}
+              />
+            );
           }
         })}
       </div>

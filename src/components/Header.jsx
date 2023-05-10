@@ -4,6 +4,7 @@ import Navbar from "react-bootstrap/Navbar";
 import Form from "react-bootstrap/Form";
 import DropdownMenu from "./DropdownMenu";
 import { Link } from "react-router-dom";
+import { Basket } from "react-bootstrap-icons";
 
 function Header({ kategorier }) {
   const brandName = "Cool Fashion";
@@ -21,16 +22,25 @@ function Header({ kategorier }) {
               <DropdownMenu kategorier={kategorier} />
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link href="/ContactForm">Kundservice</Nav.Link>
+              <Nav.Link as={Link} to="/ContactForm">
+                Kundservice
+              </Nav.Link>
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link href="/adminupload">Admin</Nav.Link>
+              <Nav.Link as={Link} to="/adminupload">
+                Admin
+              </Nav.Link>
             </Nav.Item>
           </Nav>
           <Form>
             <Form.Control type="search" placeholder="Sök" className="me-4" />
           </Form>
         </Container>
+        <Nav.Item>
+          <Nav.Link as={Link} to="/cart" className="px-4">
+            <Basket className="basketIcon" />
+          </Nav.Link>
+        </Nav.Item>
       </Navbar>
     </div>
   );

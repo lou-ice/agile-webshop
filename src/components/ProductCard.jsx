@@ -2,9 +2,8 @@ import Card from "react-bootstrap/Card";
 import "../css/ProductCard.css";
 import { useState } from "react";
 
-function ProductCard({ product }) {
+function ProductCard({ product, onAdd }) {
   const [hover, setHover] = useState(false);
-
   const mouseOver = () => {
     setHover(true);
   };
@@ -29,6 +28,9 @@ function ProductCard({ product }) {
         <Card.Title>{product.produktnamn}</Card.Title>
         <Card.Text>{product.kategori}</Card.Text>
         <Card.Text>{product.info}</Card.Text>
+        <button className="btn btn-dark" onClick={() => onAdd(product)}>
+          add to cart
+        </button>
       </Card.Body>
     </Card>
   );
