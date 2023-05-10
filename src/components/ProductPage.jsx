@@ -17,8 +17,8 @@ function ProductPage({ product, kategorier, onAdd, onRemove, cartItems }) {
     setValue(location?.state?.kategori);
   }, [location.state?.kategori]);
 
-  console.log(location?.state?.kategori);
-  console.log(value);
+  //console.log(location?.state?.kategori);
+  //console.log(value);
   return (
     <>
       {/*<div className=" m-5">
@@ -44,11 +44,10 @@ function ProductPage({ product, kategorier, onAdd, onRemove, cartItems }) {
           </button>
         </Link>
         {kategorier.map((item) => (
-          <Link to="../productpage" state={{ kategori: item }}>
+          <Link to="../productpage" key={item} state={{ kategori: item }}>
             <button
               type="button"
               className="btn btn-outline-secondary katknapp"
-              key={item}
             >
               {item}
             </button>

@@ -14,12 +14,8 @@ function CatButtons({ kategorier }) {
         </button>
       </Link>
       {kategorier.map((item) => (
-        <Link to="../productpage" state={{ kategori: item }}>
-          <button
-            type="button"
-            className="btn btn-outline-secondary katknapp"
-            key={item}
-          >
+        <Link to="../productpage" key={item} state={{ kategori: item }}>
+          <button type="button" className="btn btn-outline-secondary katknapp">
             {item}
           </button>
         </Link>

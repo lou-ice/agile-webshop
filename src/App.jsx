@@ -14,16 +14,16 @@ function App() {
   const [product, setProduct] = useState([]);
   const [cartItems, setCartItems] = useState([]); //State för produkter vi skickar till varukorgen
   //const products = state;
-  console.log(cartItems);
+  //console.log(cartItems);
+
   const onAdd = (product) => {
     //Funktion för att lägga till i vår cart
-
     const exist = cartItems.find(
       //Har vi redan produkten i vår cartItem eller inte?
       (item) => item.articlenumber === product.articlenumber
     );
     if (exist) {
-      console.log(exist);
+      //console.log(exist);
       //Om vi har samma produkt öka den produkten med en
       const newCartItems = cartItems.map((item) =>
         item.articlenumber === product.articlenumber
@@ -36,12 +36,20 @@ function App() {
       setCartItems(newCartItems);
     }
   };
+
   const onRemove = (productbuy) => {
     //Tar bort produkt baserat på produktnummer
     const items = cartItems.filter(
       (item) => item.articlenumber !== productbuy.articlenumber
     );
     setCartItems(items);
+  };
+
+  // Total product quantity in cart
+  const getCartQuantity = () => {
+    return cartItems
+      .map((productInCart) => productInCart.qty)
+      .reduce((add, current) => add + current, 0);
   };
 
   const fetchPost = async () => {
@@ -54,7 +62,7 @@ function App() {
     });
   };
 
-  console.log(product);
+  //console.log(product);
   useEffect(() => {
     fetchPost();
   }, []);
@@ -68,50 +76,49 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Header kategorier={kategorier} />
-      <div>
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <FrontPage
-                product={product}
-                kategorier={kategorier}
-                onAdd={onAdd}
-              />
-            }
-          />
-          <Route
-            path="adminupload"
-            element={<AdminUpload product={product} />}
-          />
-          <Route path="contactForm" element={<ContactForm />} />
-          <Route
-            path="productpage"
-            element={
-              <ProductPage
-                cartItems={cartItems}
-                onAdd={onAdd}
-                onRemove={onRemove}
-                product={product}
-                kategorier={kategorier}
-              />
-            }
-          />
-          <Route
-            path="cart"
-            element={
-              <Cart
-                cartItems={cartItems}
-                onAdd={onAdd}
-                onRemove={onRemove}
-                product={product}
-                kategorier={kategorier}
-              />
-            }
-          />
-        </Routes>
-      </div>
+      <Header kategorier={kategorier} cartQty={getCartQuantity()} />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <FrontPage
+              product={product}
+              kategorier={kategorier}
+              onAdd={onAdd}
+            />
+          }
+        />
+        <Route
+          path="adminupload"
+          element={<AdminUpload product={product} onAdd={onAdd} />}
+        />
+        <Route path="contactForm" element={<ContactForm />} />
+        <Route
+          path="productpage"
+          element={
+            <ProductPage
+              cartItems={cartItems}
+              onAdd={onAdd}
+              onRemove={onRemove}
+              product={product}
+              kategorier={kategorier}
+            />
+          }
+        />
+        <Route
+          path="cart"
+          element={
+            <Cart
+              cartItems={cartItems}
+              onAdd={onAdd}
+              onRemove={onRemove}
+              product={product}
+              kategorier={kategorier}
+              cartQty={getCartQuantity()}
+            />
+          }
+        />
+      </Routes>
     </BrowserRouter>
   );
 }

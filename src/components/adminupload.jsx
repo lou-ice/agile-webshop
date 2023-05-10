@@ -4,16 +4,16 @@ import { addDoc, collection } from "@firebase/firestore";
 import ProductCard from "../components/ProductCard";
 import "../css/adminupload.css";
 
-function AdminUpload({ product }) {
+function AdminUpload({ product, onAdd }) {
   const kategori = useRef();
   const pname = useRef();
   const info = useRef();
   const pic = useRef();
   const ref = collection(firestore, "products");
   const time = { date: new Date() };
-  console.log(time);
+  //console.log(time);
   const number = product.length + 100001;
-  console.log(number);
+  //console.log(number);
 
   const handleSave = async (e) => {
     e.preventDefault();
@@ -67,7 +67,7 @@ function AdminUpload({ product }) {
       </div>
       <div className="display-products">
         {product?.map((product) => (
-          <ProductCard key={product.id} product={product} />
+          <ProductCard key={product.id} product={product} onAdd={onAdd} />
         ))}
       </div>
     </div>

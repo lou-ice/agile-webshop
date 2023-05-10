@@ -6,43 +6,46 @@ import DropdownMenu from "./DropdownMenu";
 import { Link } from "react-router-dom";
 import { Basket } from "react-bootstrap-icons";
 
-function Header({ kategorier }) {
+function Header({ kategorier, cartQty }) {
   const brandName = "Cool Fashion";
   return (
-    <div>
-      <Navbar bg="light" expand="lg">
-        <Container>
-          <Navbar.Brand>
-            <Link to="/" className="text-decoration-none">
-              {brandName}
-            </Link>
-          </Navbar.Brand>
-          <Nav className="me-auto">
-            <Nav.Item>
-              <DropdownMenu kategorier={kategorier} />
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link as={Link} to="/ContactForm">
-                Kundservice
-              </Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link as={Link} to="/adminupload">
-                Admin
-              </Nav.Link>
-            </Nav.Item>
-          </Nav>
-          <Form>
-            <Form.Control type="search" placeholder="Sök" className="me-4" />
-          </Form>
-        </Container>
-        <Nav.Item>
-          <Nav.Link as={Link} to="/cart" className="px-4">
-            <Basket className="basketIcon" />
-          </Nav.Link>
-        </Nav.Item>
-      </Navbar>
-    </div>
+    <Navbar bg="light" expand="lg">
+      <Container>
+        <Navbar.Brand>
+          <Link to="/" className="text-decoration-none">
+            {brandName}
+          </Link>
+        </Navbar.Brand>
+        <Nav className="me-auto">
+          <Nav.Item>
+            <DropdownMenu kategorier={kategorier} />
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link as={Link} to="/ContactForm">
+              Kundservice
+            </Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link as={Link} to="/adminupload">
+              Admin
+            </Nav.Link>
+          </Nav.Item>
+        </Nav>
+        <Form>
+          <Form.Control type="search" placeholder="Sök" className="me-4" />
+        </Form>
+      </Container>
+      <Nav.Item>
+        <Nav.Link
+          as={Link}
+          to="/cart"
+          className="px-4 d-flex position-relative"
+        >
+          <Basket className="basketIcon" />
+          {cartQty > 0 && <div className="basketQuantity">{cartQty}</div>}
+        </Nav.Link>
+      </Nav.Item>
+    </Navbar>
   );
 }
 

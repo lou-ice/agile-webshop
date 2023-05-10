@@ -1,13 +1,14 @@
 import React from "react";
 import { Trash } from "react-bootstrap-icons";
+import "../css/cart.css";
 
-function Cart(props) {
-  const { cartItems, onAdd, onRemove } = props;
-
+function Cart({ cartItems, onAdd, onRemove, cartQty }) {
   return (
     <div className="cart">
       <fieldset className="border p-4">
-        <legend className="float-none w-auto">Varukorg</legend>
+        <legend className="float-none w-auto">
+          Varukorg {cartQty > 0 && <span>({cartQty})</span>}
+        </legend>
 
         <div>{cartItems.length === 0 && <div>Varukorgen är tom</div>}</div>
 
@@ -26,7 +27,7 @@ function Cart(props) {
                 <div>
                   <div>
                     <strong>{item.produktnamn}</strong>
-                  </div>{" "}
+                  </div>
                   <div>
                     <div>{item.qty}</div>
                     <button

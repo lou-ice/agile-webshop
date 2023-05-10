@@ -17,3 +17,7 @@
   height: 45vh;
   object-fit: cover;
 }
+
+.zoom-effect {
+  overflow: hidden;
+}
