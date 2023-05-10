@@ -3,11 +3,11 @@ import Header from "./components/Header";
 import AdminUpload from "./components/adminupload";
 import ContactForm from "./components/ContactForm";
 import ProductPage from "./components/ProductPage";
+import FrontPage from "./components/FrontPage";
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { firestore } from "./firebase";
 import { collection, getDocs } from "@firebase/firestore";
-import FrontPage from "./components/FrontPage";
 
 function App() {
   const [product, setProduct] = useState([]);
@@ -36,7 +36,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Header product={product} kategorier={kategorier} />
+      <Header kategorier={kategorier} />
       <Routes>
         <Route
           path="/"

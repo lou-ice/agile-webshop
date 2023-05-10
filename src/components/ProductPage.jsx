@@ -55,12 +55,12 @@ function ProductPage({ product, kategorier }) {
         ))}
       </div>
 
-      <div className="d-flex justify-content-center h3 mt-5">
-        {value !== "Se Alla" ? value.toUpperCase() : "ALLA PRODUKTER"}
+      <div className="d-flex justify-content-center h3 mt-5 mb-3">
+        {value !== "Se alla" ? value.toUpperCase() : "ALLA PRODUKTER"}
       </div>
       <div className="display-products">
-        {product.map((product, i) => {
-          if (value === "Se Alla" || product.kategori.includes(value)) {
+        {product.map((product) => {
+          if (value === "Se alla" || product.kategori.includes(value)) {
             return <ProductCard key={product.id} product={product} />;
           }
         })}
