@@ -4,15 +4,15 @@ function CatButtons({ kategorier }) {
   return (
     <div className="katknapp">
       {kategorier.map((item) => (
-        <button
-          type="button"
-          className="btn btn-outline-secondary katknapp"
-          key={item}
-        >
-          <Link to="productpage" state={{ kategori: item }}>
+        <Link to="productpage" state={{ kategori: item }}>
+          <button
+            type="button"
+            className="btn btn-outline-secondary katknapp"
+            key={item}
+          >
             {item}
-          </Link>
-        </button>
+          </button>
+        </Link>
       ))}
     </div>
   );
