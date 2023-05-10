@@ -43,11 +43,10 @@ function ProductPage({ product, kategorier }) {
           </button>
         </Link>
         {kategorier.map((item) => (
-          <Link to="../productpage" state={{ kategori: item }}>
+          <Link to="../productpage" key={item} state={{ kategori: item }}>
             <button
               type="button"
               className="btn btn-outline-secondary katknapp"
-              key={item}
             >
               {item}
             </button>
