@@ -5,11 +5,16 @@ function News({ product }) {
   const [latestProducts, setLatestProducts] = useState([]);
 
   useEffect(() => {
-    setLatestProducts(product.slice(-3));
+    let tempProducts = product.sort(
+      (a, b) => a.articlenumber - b.articlenumber
+    );
+    setLatestProducts(tempProducts.slice(-3).reverse());
   }, [product]);
   return (
     <>
-      <div className="d-flex justify-content-center h3 mt-4">Nyheter</div>
+      <div className="d-flex justify-content-center text-uppercase h3 mt-4 mb-3">
+        Nyheter
+      </div>
       <div className="display-products">
         {latestProducts?.map((product) => (
           <ProductCard key={product.id} product={product} />

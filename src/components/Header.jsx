@@ -3,27 +3,32 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Form from "react-bootstrap/Form";
 import DropdownMenu from "./DropdownMenu";
+import { Link } from "react-router-dom";
 
-function Header({ product, kategorier }) {
+function Header({ kategorier }) {
   const brandName = "Cool Fashion";
   return (
     <div>
       <Navbar bg="light" expand="lg">
         <Container>
-          <Navbar.Brand>{brandName}</Navbar.Brand>
+          <Navbar.Brand>
+            <Link to="/" className="text-decoration-none">
+              {brandName}
+            </Link>
+          </Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Item>
               <DropdownMenu kategorier={kategorier} />
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link href="/ContactForm"> Kundservice</Nav.Link>
+              <Nav.Link href="/ContactForm">Kundservice</Nav.Link>
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link href="/adminupload"> Admin</Nav.Link>
+              <Nav.Link href="/adminupload">Admin</Nav.Link>
             </Nav.Item>
           </Nav>
           <Form>
-            <Form.Control type="search" placeholder="Search" className="me-4" />
+            <Form.Control type="search" placeholder="Sök" className="me-4" />
           </Form>
         </Container>
       </Navbar>
