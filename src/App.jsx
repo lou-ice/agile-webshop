@@ -36,7 +36,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Header kategorier={kategorier} />
+      <Header kategorier={kategorier} product={product}/>
       <Routes>
         <Route
           path="/"

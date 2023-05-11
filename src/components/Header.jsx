@@ -1,11 +1,11 @@
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import Form from "react-bootstrap/Form";
 import DropdownMenu from "./DropdownMenu";
 import { Link } from "react-router-dom";
+import SearchBar from "./Search";
 
-function Header({ kategorier }) {
+function Header({ kategorier, product }) {
   const brandName = "Cool Fashion";
   return (
     <div>
@@ -27,9 +27,7 @@ function Header({ kategorier }) {
               <Nav.Link href="/adminupload">Admin</Nav.Link>
             </Nav.Item>
           </Nav>
-          <Form>
-            <Form.Control type="search" placeholder="Sök" className="me-4" />
-          </Form>
+          <SearchBar product={product}/>
         </Container>
       </Navbar>
     </div>
