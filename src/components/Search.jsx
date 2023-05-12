@@ -24,7 +24,7 @@ export default function SearchBar({ product }) {
 
   const onClickHandler = () => {
     navigate("/productPage", { state: { searchResult: suggestions } });
-    setSearchTerm("");
+    setSearchTerm(""); 
   };
   return (
     <div className="searchWrapper">
@@ -51,7 +51,7 @@ export default function SearchBar({ product }) {
           </button>
         </div>
       </div>
-      {suggestions.length > 0 && (
+      {searchTerm !== "" && suggestions.length > 0 && ( 
         <ul
           className="dropdown-menu show"
           aria-labelledby="dropdownMenuButton1"
