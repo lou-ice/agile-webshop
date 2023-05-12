@@ -1,57 +1,81 @@
 import React from "react";
 import { Trash } from "react-bootstrap-icons";
+import { Offcanvas } from "react-bootstrap";
 import "../css/cart.css";
 
-function Cart({ cartItems, onAdd, onRemove, cartQty }) {
+function Cart({
+  cartItems,
+  setCartItems,
+  onRemove,
+  cartQty,
+  showCart,
+  handleClose,
+}) {
+  const changeQuantity = (item, value) => {
+    item.qty += value;
+    setCartItems([...cartItems]);
+    if (item.qty === 0) {
+      onRemove(item);
+    }
+  };
+
   return (
-    <div className="cart">
-      <fieldset className="border p-4">
-        <legend className="float-none w-auto">
-          Varukorg {cartQty > 0 && <span>({cartQty})</span>}
-        </legend>
+    <>
+      <Offcanvas show={showCart} onHide={handleClose} placement={"end"}>
+        <Offcanvas.Header closeButton>
+          <Offcanvas.Title>
+            Varukorg {cartQty > 0 && <span>({cartQty})</span>}
+          </Offcanvas.Title>
+        </Offcanvas.Header>
+        <Offcanvas.Body>
+          {cartItems.length === 0 && (
+            <div className="empty-cart">Här var det tomt!</div>
+          )}
 
-        <div>{cartItems.length === 0 && <div>Varukorgen är tom</div>}</div>
-
-        <div>
           {cartItems.map((item) => (
-            <div key={item.articlenumber}>
-              <div className="flex">
-                <div>
-                  <img
-                    className="cartImage"
-                    src={item.bild}
-                    width="100px"
-                    alt=""
-                  />
-                </div>
-                <div>
-                  <div>
-                    <strong>{item.produktnamn}</strong>
-                  </div>
-                  <div>
-                    <div>{item.qty}</div>
-                    <button
-                      className="btn btn-success btn-send  pt-2 btn-block"
-                      onClick={() => onAdd(item)}
-                    >
-                      +
-                    </button>
-                    <button
-                      className="btn btn-danger"
-                      onClick={() => onRemove(item)}
-                    >
-                      <Trash />
-                    </button>
-                  </div>
+            <div className="cart-product" key={item.articlenumber}>
+              <img
+                src={item.bild}
+                alt={item.produktnamn}
+                className="img-fluid"
+                width="80px"
+              />
+              <div className="cart-info">
+                <span className="product-name">{item.produktnamn}</span>
+                <div className="change-quantity">
+                  <button
+                    className="quantity-counter"
+                    onClick={() => changeQuantity(item, -1)}
+                  >
+                    -
+                  </button>
+                  <span className="product-quantity">{item.qty}</span>
+                  <button
+                    className="quantity-counter"
+                    onClick={() => changeQuantity(item, 1)}
+                  >
+                    +
+                  </button>
                 </div>
               </div>
-
-              <hr />
+              <div className="remove-product">
+                <button
+                  className="btn btn-light px-2 py-1"
+                  onClick={() => onRemove(item)}
+                >
+                  <Trash />
+                </button>
+              </div>
             </div>
           ))}
-        </div>
-      </fieldset>
-    </div>
+          <div className="cart-footer">
+            {cartItems.length > 0 && (
+              <button className="btn btn-dark py-2 mt-3">Checkout</button>
+            )}
+          </div>
+        </Offcanvas.Body>
+      </Offcanvas>
+    </>
   );
 }
 

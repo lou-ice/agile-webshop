@@ -20,7 +20,7 @@ export default function SearchBar({ product }) {
     };
 
     suggestionsHandler();
-  }, [searchTerm]);
+  }, [searchTerm, product]);
 
   const onClickHandler = () => {
     navigate("/productPage", { state: { searchResult: suggestions } });
@@ -58,14 +58,14 @@ export default function SearchBar({ product }) {
         >
           {suggestions.map((dropdownItem, i) => (
             <li style={{ cursor: "pointer" }} key={i}>
-              <a
+              <button
                 onClick={() => {
                   onClickHandler(dropdownItem);
                 }}
                 className="dropdown-item"
               >
                 {dropdownItem.produktnamn}
-              </a>
+              </button>
             </li>
           ))}
         </ul>

@@ -12,13 +12,10 @@ a:visited {
   color: #000000;
 }
 
-.rs-dropdown-item-submenu:hover > .rs-dropdown-item-toggle {
-  color: black;
-  background-color: rgba(0, 0, 0, 0.047);
-}
-
+.rs-dropdown-item-submenu:hover > .rs-dropdown-item-toggle,
 .rs-dropdown-item.rs-dropdown-item-focus,
-.rs-dropdown-item:focus-visible {
+.rs-dropdown-item:focus-visible,
+.dropdown-item:active {
   color: black;
   background-color: rgba(0, 0, 0, 0.047);
 }

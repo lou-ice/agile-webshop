@@ -61,7 +61,9 @@ function ProductPage({ product, kategorier, onAdd, onRemove, cartItems }) {
       <div className="display-products">
         {searchResult
           ? searchResult.map((product) => {
-              return <ProductCard key={product.id} product={product} />;
+              return (
+                <ProductCard key={product.id} product={product} onAdd={onAdd} />
+              );
             })
           : product.map((product) => {
               if (value === "Se alla" || product.kategori.includes(value)) {

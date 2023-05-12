@@ -12,6 +12,7 @@ import { collection, getDocs } from "@firebase/firestore";
 
 function App() {
   const [product, setProduct] = useState([]);
+  const [showCart, setShowCart] = useState(false);
   const [cartItems, setCartItems] = useState([]); //State för produkter vi skickar till varukorgen
   //const products = state;
   //console.log(cartItems);
@@ -80,6 +81,18 @@ function App() {
         kategorier={kategorier}
         cartQty={getCartQuantity()}
         product={product}
+        setShowCart={setShowCart}
+      />
+      <Cart
+        showCart={showCart}
+        handleClose={() => setShowCart(false)}
+        cartItems={cartItems}
+        setCartItems={setCartItems}
+        onAdd={onAdd}
+        onRemove={onRemove}
+        product={product}
+        kategorier={kategorier}
+        cartQty={getCartQuantity()}
       />
       <Routes>
         <Route
@@ -106,19 +119,6 @@ function App() {
               onRemove={onRemove}
               product={product}
               kategorier={kategorier}
-            />
-          }
-        />
-        <Route
-          path="cart"
-          element={
-            <Cart
-              cartItems={cartItems}
-              onAdd={onAdd}
-              onRemove={onRemove}
-              product={product}
-              kategorier={kategorier}
-              cartQty={getCartQuantity()}
             />
           }
         />

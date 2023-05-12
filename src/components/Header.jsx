@@ -2,11 +2,11 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import DropdownMenu from "./DropdownMenu";
-import { Link } from "react-router-dom";
 import SearchBar from "./Search";
+import { Link } from "react-router-dom";
 import { Basket, SuitHeart } from "react-bootstrap-icons";
 
-function Header({ kategorier, product, cartQty }) {
+function Header({ kategorier, product, cartQty, setShowCart }) {
   const brandName = "Cool Fashion";
   return (
     <Navbar bg="light" expand="lg">
@@ -38,14 +38,13 @@ function Header({ kategorier, product, cartQty }) {
           <Nav.Link as={Link} to="/" className="px-2">
             <SuitHeart className="icon" />
           </Nav.Link>
-          <Nav.Link
-            as={Link}
-            to="/cart"
-            className="px-4 d-flex position-relative"
+          <button
+            className="px-4 d-flex position-relative cart-btn"
+            onClick={() => setShowCart(true)}
           >
             <Basket className="icon" />
-            {cartQty > 0 && <div className="basketQuantity">{cartQty}</div>}
-          </Nav.Link>
+            {cartQty > 0 && <div className="cart-quantity">{cartQty}</div>}
+          </button>
         </div>
       </Nav.Item>
     </Navbar>

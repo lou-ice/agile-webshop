@@ -10,8 +10,6 @@ function AdminUpload({ product, onAdd }) {
   const info = useRef();
   const pic = useRef();
   const ref = collection(firestore, "products");
-  const time = { date: new Date() };
-  //console.log(time);
   const number = product.length + 100001;
   //console.log(number);
 
