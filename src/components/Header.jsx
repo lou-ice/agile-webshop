@@ -4,7 +4,7 @@ import Navbar from "react-bootstrap/Navbar";
 import Form from "react-bootstrap/Form";
 import DropdownMenu from "./DropdownMenu";
 import { Link } from "react-router-dom";
-import { Basket } from "react-bootstrap-icons";
+import { Basket, SuitHeart } from "react-bootstrap-icons";
 
 function Header({ kategorier, cartQty }) {
   const brandName = "Cool Fashion";
@@ -36,14 +36,19 @@ function Header({ kategorier, cartQty }) {
         </Form>
       </Container>
       <Nav.Item>
-        <Nav.Link
-          as={Link}
-          to="/cart"
-          className="px-4 d-flex position-relative"
-        >
-          <Basket className="basketIcon" />
-          {cartQty > 0 && <div className="basketQuantity">{cartQty}</div>}
-        </Nav.Link>
+        <div className="d-flex">
+          <Nav.Link as={Link} to="/" className="px-2">
+            <SuitHeart className="icon" />
+          </Nav.Link>
+          <Nav.Link
+            as={Link}
+            to="/cart"
+            className="px-4 d-flex position-relative"
+          >
+            <Basket className="icon" />
+            {cartQty > 0 && <div className="basketQuantity">{cartQty}</div>}
+          </Nav.Link>
+        </div>
       </Nav.Item>
     </Navbar>
   );

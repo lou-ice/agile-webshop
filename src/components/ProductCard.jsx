@@ -1,6 +1,7 @@
 import Card from "react-bootstrap/Card";
 import "../css/ProductCard.css";
 import { useState } from "react";
+import { SuitHeart } from "react-bootstrap-icons";
 
 function ProductCard({ product, onAdd }) {
   const [hover, setHover] = useState(false);
@@ -33,9 +34,14 @@ function ProductCard({ product, onAdd }) {
         <Card.Title>{product.produktnamn}</Card.Title>
         <Card.Text>{product.kategori}</Card.Text>
         <Card.Text className="mb-4">{product.info}</Card.Text>
-        <button className="btn btn-dark mt-auto" onClick={() => onAdd(product)}>
-          Köp
-        </button>
+        <div className="d-flex justify-content-between mt-auto">
+          <button className="btn btn-dark px-4" onClick={() => onAdd(product)}>
+            Köp
+          </button>
+          <button className="btn btn-light">
+            <SuitHeart />
+          </button>
+        </div>
       </Card.Body>
     </Card>
   );
