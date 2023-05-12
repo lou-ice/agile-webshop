@@ -7,13 +7,13 @@ import { Link } from "react-router-dom";
 function ProductPage({ product, kategorier, onAdd, onRemove, cartItems }) {
   //console.log(product);
   const location = useLocation();
-  const {searchResult} = location.state;
-  
+  const { searchResult } = location.state;
+
   const [value, setValue] = useState(location?.state?.kategori); //Söksträngen
   /*const onChange = (event) => {
     setValue(event);
   };*/
-  
+
   useEffect(() => {
     setValue(location?.state?.kategori);
   }, [location.state?.kategori]);
@@ -59,23 +59,25 @@ function ProductPage({ product, kategorier, onAdd, onRemove, cartItems }) {
         {value !== "Se alla" ? value?.toUpperCase() : "ALLA PRODUKTER"}
       </div>
       <div className="display-products">
-        {searchResult ? searchResult.map((product) => {
-            return <ProductCard key={product.id} product={product} />;
-          }) : product.map((product) => {
-          if (value === "Se alla" || product.kategori.includes(value)) {
-            return (
-              <ProductCard
-                key={product.id}
-                product={product}
-                item={cartItems.find(
-                  (x) => x.articlenumber === product.articlenumber
-                )}
-                onAdd={onAdd}
-                onRemove={onRemove}
-              />
-            );
-          }
-        })}
+        {searchResult
+          ? searchResult.map((product) => {
+              return <ProductCard key={product.id} product={product} />;
+            })
+          : product.map((product) => {
+              if (value === "Se alla" || product.kategori.includes(value)) {
+                return (
+                  <ProductCard
+                    key={product.id}
+                    product={product}
+                    item={cartItems.find(
+                      (x) => x.articlenumber === product.articlenumber
+                    )}
+                    onAdd={onAdd}
+                    onRemove={onRemove}
+                  />
+                );
+              }
+            })}
       </div>
     </>
   );

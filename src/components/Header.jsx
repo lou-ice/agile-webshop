@@ -9,19 +9,18 @@ import { Basket, SuitHeart } from "react-bootstrap-icons";
 function Header({ kategorier, product, cartQty }) {
   const brandName = "Cool Fashion";
   return (
-    <div>
-      <Navbar bg="light" expand="lg">
-        <Container>
-          <Navbar.Brand>
-            <Link to="/" className="text-decoration-none">
-              {brandName}
-            </Link>
-          </Navbar.Brand>
-          <Nav className="me-auto">
-            <Nav.Item>
-              <DropdownMenu kategorier={kategorier} />
-            </Nav.Item>
-            <Nav.Item>
+    <Navbar bg="light" expand="lg">
+      <Container>
+        <Navbar.Brand>
+          <Link to="/" className="text-decoration-none">
+            {brandName}
+          </Link>
+        </Navbar.Brand>
+        <Nav className="me-auto">
+          <Nav.Item>
+            <DropdownMenu kategorier={kategorier} />
+          </Nav.Item>
+          <Nav.Item>
             <Nav.Link as={Link} to="/ContactForm">
               Kundservice
             </Nav.Link>
@@ -31,10 +30,10 @@ function Header({ kategorier, product, cartQty }) {
               Admin
             </Nav.Link>
           </Nav.Item>
-          </Nav>
-          <SearchBar product={product}/>
-        </Container>
-        <Nav.Item>
+        </Nav>
+        <SearchBar product={product} />
+      </Container>
+      <Nav.Item>
         <div className="d-flex">
           <Nav.Link as={Link} to="/" className="px-2">
             <SuitHeart className="icon" />
@@ -49,8 +48,7 @@ function Header({ kategorier, product, cartQty }) {
           </Nav.Link>
         </div>
       </Nav.Item>
-      </Navbar>
-    </div>
+    </Navbar>
   );
 }
 
