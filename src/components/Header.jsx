@@ -1,26 +1,27 @@
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import Form from "react-bootstrap/Form";
 import DropdownMenu from "./DropdownMenu";
 import { Link } from "react-router-dom";
+import SearchBar from "./Search";
 import { Basket, SuitHeart } from "react-bootstrap-icons";
 
-function Header({ kategorier, cartQty }) {
+function Header({ kategorier, product, cartQty }) {
   const brandName = "Cool Fashion";
   return (
-    <Navbar bg="light" expand="lg">
-      <Container>
-        <Navbar.Brand>
-          <Link to="/" className="text-decoration-none">
-            {brandName}
-          </Link>
-        </Navbar.Brand>
-        <Nav className="me-auto">
-          <Nav.Item>
-            <DropdownMenu kategorier={kategorier} />
-          </Nav.Item>
-          <Nav.Item>
+    <div>
+      <Navbar bg="light" expand="lg">
+        <Container>
+          <Navbar.Brand>
+            <Link to="/" className="text-decoration-none">
+              {brandName}
+            </Link>
+          </Navbar.Brand>
+          <Nav className="me-auto">
+            <Nav.Item>
+              <DropdownMenu kategorier={kategorier} />
+            </Nav.Item>
+            <Nav.Item>
             <Nav.Link as={Link} to="/ContactForm">
               Kundservice
             </Nav.Link>
@@ -30,12 +31,10 @@ function Header({ kategorier, cartQty }) {
               Admin
             </Nav.Link>
           </Nav.Item>
-        </Nav>
-        <Form>
-          <Form.Control type="search" placeholder="Sök" className="me-4" />
-        </Form>
-      </Container>
-      <Nav.Item>
+          </Nav>
+          <SearchBar product={product}/>
+        </Container>
+        <Nav.Item>
         <div className="d-flex">
           <Nav.Link as={Link} to="/" className="px-2">
             <SuitHeart className="icon" />
@@ -50,7 +49,8 @@ function Header({ kategorier, cartQty }) {
           </Nav.Link>
         </div>
       </Nav.Item>
-    </Navbar>
+      </Navbar>
+    </div>
   );
 }
 

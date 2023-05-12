@@ -76,7 +76,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Header kategorier={kategorier} cartQty={getCartQuantity()} />
+      <Header kategorier={kategorier} cartQty={getCartQuantity()} product={product}/>
       <Routes>
         <Route
           path="/"

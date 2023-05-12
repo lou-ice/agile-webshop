@@ -7,12 +7,13 @@ import { Link } from "react-router-dom";
 function ProductPage({ product, kategorier, onAdd, onRemove, cartItems }) {
   //console.log(product);
   const location = useLocation();
-
+  const {searchResult} = location.state;
+  
   const [value, setValue] = useState(location?.state?.kategori); //Söksträngen
   /*const onChange = (event) => {
     setValue(event);
   };*/
-
+  
   useEffect(() => {
     setValue(location?.state?.kategori);
   }, [location.state?.kategori]);
@@ -55,10 +56,12 @@ function ProductPage({ product, kategorier, onAdd, onRemove, cartItems }) {
         ))}
       </div>
       <div className="d-flex justify-content-center h3 mt-5 mb-3">
-        {value !== "Se alla" ? value.toUpperCase() : "ALLA PRODUKTER"}
+        {value !== "Se alla" ? value?.toUpperCase() : "ALLA PRODUKTER"}
       </div>
       <div className="display-products">
-        {product.map((product) => {
+        {searchResult ? searchResult.map((product) => {
+            return <ProductCard key={product.id} product={product} />;
+          }) : product.map((product) => {
           if (value === "Se alla" || product.kategori.includes(value)) {
             return (
               <ProductCard
