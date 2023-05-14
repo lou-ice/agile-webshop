@@ -49,7 +49,9 @@ function ProductPage({
             type="button"
             className="btn btn-outline-secondary katknapp"
             key={"all"}
-          ></button>
+          >
+            {"Se alla"}
+          </button>
         </Link>
         {kategorier.map((item) => (
           <Link to="../productpage" key={item} state={{ kategori: item }}>
