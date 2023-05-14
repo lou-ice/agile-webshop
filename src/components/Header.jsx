@@ -6,7 +6,13 @@ import SearchBar from "./Search";
 import { Link } from "react-router-dom";
 import { Basket, SuitHeart } from "react-bootstrap-icons";
 
-function Header({ kategorier, product, cartQty, setShowCart }) {
+function Header({
+  kategorier,
+  product,
+  cartQty,
+  setShowCart,
+  setShowWishlist,
+}) {
   const brandName = "Cool Fashion";
   return (
     <Navbar bg="light" expand="lg">
@@ -35,9 +41,12 @@ function Header({ kategorier, product, cartQty, setShowCart }) {
       </Container>
       <Nav.Item>
         <div className="d-flex">
-          <Nav.Link as={Link} to="/" className="px-2">
+          <button
+            className="px-4 d-flex position-relative cart-btn"
+            onClick={() => setShowWishlist(true)}
+          >
             <SuitHeart className="icon" />
-          </Nav.Link>
+          </button>
           <button
             className="px-4 d-flex position-relative cart-btn"
             onClick={() => setShowCart(true)}

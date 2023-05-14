@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
 
-function News({ product, onAdd }) {
+function News({ product, onAdd, onAddWishlist }) {
   const [latestProducts, setLatestProducts] = useState([]);
 
   useEffect(() => {
@@ -17,7 +17,12 @@ function News({ product, onAdd }) {
       </div>
       <div className="display-products">
         {latestProducts?.map((product) => (
-          <ProductCard key={product.id} product={product} onAdd={onAdd} />
+          <ProductCard
+            key={product.id}
+            product={product}
+            onAdd={onAdd}
+            onAddWishlist={onAddWishlist}
+          />
         ))}
       </div>
     </>

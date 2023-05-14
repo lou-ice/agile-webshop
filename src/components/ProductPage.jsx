@@ -4,7 +4,16 @@ import { useLocation } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-function ProductPage({ product, kategorier, onAdd, onRemove, cartItems }) {
+function ProductPage({
+  product,
+  kategorier,
+  onAdd,
+  onRemove,
+  cartItems,
+  onAddWishlist,
+  onRemoveWishlist,
+  wishlistItems,
+}) {
   //console.log(product);
   const location = useLocation();
   const { searchResult } = location.state;
@@ -40,9 +49,7 @@ function ProductPage({ product, kategorier, onAdd, onRemove, cartItems }) {
             type="button"
             className="btn btn-outline-secondary katknapp"
             key={"all"}
-          >
-            {"Se alla"}
-          </button>
+          ></button>
         </Link>
         {kategorier.map((item) => (
           <Link to="../productpage" key={item} state={{ kategori: item }}>
@@ -62,7 +69,12 @@ function ProductPage({ product, kategorier, onAdd, onRemove, cartItems }) {
         {searchResult
           ? searchResult.map((product) => {
               return (
-                <ProductCard key={product.id} product={product} onAdd={onAdd} />
+                <ProductCard
+                  key={product.id}
+                  product={product}
+                  onAdd={onAdd}
+                  onAddWishlist={onAddWishlist}
+                />
               );
             })
           : product.map((product) => {
@@ -76,6 +88,11 @@ function ProductPage({ product, kategorier, onAdd, onRemove, cartItems }) {
                     )}
                     onAdd={onAdd}
                     onRemove={onRemove}
+                    itemWishlist={wishlistItems.find(
+                      (x) => x.articlenumber === product.articlenumber
+                    )}
+                    onAddWishlist={onAddWishlist}
+                    onRemoveWishlist={onRemoveWishlist}
                   />
                 );
               }

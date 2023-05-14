@@ -3,7 +3,7 @@ import "../css/ProductCard.css";
 import { useState } from "react";
 import { SuitHeart } from "react-bootstrap-icons";
 
-function ProductCard({ product, onAdd }) {
+function ProductCard({ product, onAdd, onAddWishlist }) {
   const [hover, setHover] = useState(false);
   const mouseOver = () => {
     setHover(true);
@@ -38,7 +38,10 @@ function ProductCard({ product, onAdd }) {
           <button className="btn btn-dark px-4" onClick={() => onAdd(product)}>
             Köp
           </button>
-          <button className="btn btn-light">
+          <button
+            className="btn btn-light"
+            onClick={() => onAddWishlist(product)}
+          >
             <SuitHeart />
           </button>
         </div>
