@@ -121,7 +121,6 @@ function App() {
         product={product}
         setShowCart={setShowCart}
         setShowWishlist={setShowWishlist}
-        wishlistQty={getWishlistQuantity()}
       />
       <Wishlist
         showWishlist={showWishlist}
@@ -132,6 +131,7 @@ function App() {
         onRemoveWishlist={onRemoveWishlist}
         product={product}
         kategorier={kategorier}
+        wishlistQty={getWishlistQuantity()}
       />
       <Cart
         showCart={showCart}

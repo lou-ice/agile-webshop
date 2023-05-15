@@ -39,15 +39,17 @@ function ProductCard({ product, onAdd, onAddWishlist }) {
           <button className="btn btn-dark px-4" onClick={() => onAdd(product)}>
             Köp
           </button>
-          <button
-            className="btn btn-light"
-            onClick={() => onAddWishlist(product)}
-          >
-            <SuitHeart />
-          </button>
-          <button>
-            <FaceBookShare product={product} />
-          </button>
+          <div>
+            <button
+              className="btn btn-light mx-3"
+              onClick={() => onAddWishlist(product)}
+            >
+              <SuitHeart />
+            </button>
+            <div className="btn btn-light">
+              <FaceBookShare product={product} />
+            </div>
+          </div>
         </div>
       </Card.Body>
     </Card>
