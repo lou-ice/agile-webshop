@@ -2,6 +2,7 @@ import Card from "react-bootstrap/Card";
 import "../css/ProductCard.css";
 import { useState } from "react";
 import { SuitHeart } from "react-bootstrap-icons";
+import FaceBookShare from "./FacebookShare";
 
 function ProductCard({ product, onAdd, onAddWishlist }) {
   const [hover, setHover] = useState(false);
@@ -43,6 +44,9 @@ function ProductCard({ product, onAdd, onAddWishlist }) {
             onClick={() => onAddWishlist(product)}
           >
             <SuitHeart />
+          </button>
+          <button>
+            <FaceBookShare product={product} />
           </button>
         </div>
       </Card.Body>
