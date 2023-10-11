@@ -4,9 +4,6 @@ import classes from "../css/Hero.module.css";
 const Hero = () => {
   let [image, setImage] = useState(null);
 
-  /**
-   * Fetch data from API and update image state
-   */
   useEffect(() => {
     let getImage = () => {
       fetch(

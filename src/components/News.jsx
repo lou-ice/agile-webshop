@@ -10,6 +10,7 @@ function News({ product, onAdd, onAddWishlist }) {
     );
     setLatestProducts(tempProducts.slice(-3).reverse());
   }, [product]);
+
   return (
     <>
       <div className="d-flex justify-content-center text-uppercase h3 mt-4 mb-3">

@@ -26,6 +26,7 @@ export default function SearchBar({ product }) {
     navigate("/productPage", { state: { searchResult: suggestions } });
     setSearchTerm("");
   };
+
   return (
     <div className="searchWrapper">
       <div className="input-group">

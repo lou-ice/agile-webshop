@@ -1,6 +1,5 @@
 import ProductCard from "./ProductCard";
 import { useLocation } from "react-router-dom";
-//import Dropdown from "rsuite/Dropdown";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -14,35 +13,17 @@ function ProductPage({
   onRemoveWishlist,
   wishlistItems,
 }) {
-  //console.log(product);
   const location = useLocation();
   const { searchResult } = location.state;
 
-  const [value, setValue] = useState(location?.state?.kategori); //Söksträngen
-  /*const onChange = (event) => {
-    setValue(event);
-  };*/
+  const [value, setValue] = useState(location?.state?.kategori);
 
   useEffect(() => {
     setValue(location?.state?.kategori);
   }, [location.state?.kategori]);
 
-  //console.log(location?.state?.kategori);
-  //console.log(value);
   return (
     <>
-      {/*<div className=" m-5">
-        <Dropdown size="lg" title={value} onSelect={onChange} activeKey={value}>
-          <Dropdown.Item key="all" eventKey={"Se Alla"}>
-            Se alla
-          </Dropdown.Item>
-          {kategorier.map((item) => (
-            <Dropdown.Item key={item} eventKey={item}>
-              {item}
-            </Dropdown.Item>
-          ))}
-        </Dropdown>
-          </div>*/}
       <div className="katknapp">
         <Link to="../productpage" state={{ kategori: "Se alla" }}>
           <button

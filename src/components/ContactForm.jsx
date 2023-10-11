@@ -2,6 +2,7 @@ import { useState } from "react";
 
 const ContactForm = () => {
   const [formStatus, setFormStatus] = useState("Skicka");
+
   const onSubmit = (e) => {
     e.preventDefault();
     setFormStatus("Skickar");
@@ -13,6 +14,7 @@ const ContactForm = () => {
     };
     console.log(conFom);
   };
+
   return (
     <div className="container mt-5">
       <h2 className="mb-3">Hur kan vi hjälpa dig?</h2>

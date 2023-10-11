@@ -11,7 +11,6 @@ function AdminUpload({ product, onAdd }) {
   const pic = useRef();
   const ref = collection(firestore, "products");
   const number = product.length + 100001;
-  //console.log(number);
 
   const handleSave = async (e) => {
     e.preventDefault();

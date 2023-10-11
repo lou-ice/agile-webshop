@@ -14,6 +14,7 @@ function Header({
   setShowWishlist,
 }) {
   const brandName = "Cool Fashion";
+
   return (
     <Navbar bg="light" expand="lg">
       <Container>

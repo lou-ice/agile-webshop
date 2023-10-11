@@ -5,65 +5,54 @@ import ContactForm from "./components/ContactForm";
 import ProductPage from "./components/ProductPage";
 import FrontPage from "./components/FrontPage";
 import Cart from "./components/cart";
+import Wishlist from "./components/Wishlist";
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { firestore } from "./firebase";
 import { collection, getDocs } from "@firebase/firestore";
-import Wishlist from "./components/Wishlist";
 
 function App() {
   const [product, setProduct] = useState([]);
   const [showCart, setShowCart] = useState(false);
-  const [cartItems, setCartItems] = useState([]); //State för produkter vi skickar till varukorgen
+  const [cartItems, setCartItems] = useState([]);
   const [showWishlist, setShowWishlist] = useState(false);
-  const [wishlistItems, setWishlistItems] = useState([]); //State för produkter vi skickar till wishlist
-
-  //const products = state;
-  //console.log(cartItems);
+  const [wishlistItems, setWishlistItems] = useState([]);
 
   const onAdd = (product) => {
-    //Funktion för att lägga till i vår cart
     const exist = cartItems.find(
-      //Har vi redan produkten i vår cartItem eller inte?
       (item) => item.articlenumber === product.articlenumber
     );
     if (exist) {
-      //console.log(exist);
-      //Om vi har samma produkt öka den produkten med en
       const newCartItems = cartItems.map((item) =>
         item.articlenumber === product.articlenumber
-          ? { ...exist, qty: exist.qty + 1 } //Lägger till qty till produkten och räknar upp
+          ? { ...exist, qty: exist.qty + 1 }
           : item
       );
-      setCartItems(newCartItems); //Setter funktion
+      setCartItems(newCartItems);
     } else {
-      const newCartItems = [...cartItems, { ...product, qty: 1 }]; //Om vi inte har produkten i vår state så lägger vi till den
+      const newCartItems = [...cartItems, { ...product, qty: 1 }];
       setCartItems(newCartItems);
     }
   };
 
   const onAddWishlist = (product) => {
-    //Funktion för att lägga till i vår wishlist
     const exist = wishlistItems.find(
-      //Har vi redan produkten i vår wishlist eller inte?
       (item) => item.articlenumber === product.articlenumber
     );
     if (exist) {
-      //Om vi har samma produkt öka den produkten med en
       const newWishlistItems = wishlistItems.map((item) =>
         item.articlenumber === product.articlenumber
-          ? { ...exist, qty: exist.qty + 1 } //Lägger till qty till produkten och räknar upp
+          ? { ...exist, qty: exist.qty + 1 }
           : item
       );
-      setWishlistItems(newWishlistItems); //Setter funktion
+      setWishlistItems(newWishlistItems);
     } else {
-      const newWishlistItems = [...wishlistItems, { ...product, qty: 1 }]; //Om vi inte har produkten i vår state så lägger vi till den
+      const newWishlistItems = [...wishlistItems, { ...product, qty: 1 }];
       setWishlistItems(newWishlistItems);
     }
   };
 
   const onRemove = (productbuy) => {
-    //Tar bort produkt baserat på produktnummer
     const items = cartItems.filter(
       (item) => item.articlenumber !== productbuy.articlenumber
     );
@@ -71,14 +60,12 @@ function App() {
   };
 
   const onRemoveWishlist = (productWish) => {
-    //Tar bort produkt baserat på produktnummer
     const items = wishlistItems.filter(
       (item) => item.articlenumber !== productWish.articlenumber
     );
     setWishlistItems(items);
   };
 
-  // Total product quantity in cart
   const getCartQuantity = () => {
     return cartItems
       .map((productInCart) => productInCart.qty)
@@ -101,7 +88,6 @@ function App() {
     });
   };
 
-  //console.log(product);
   useEffect(() => {
     fetchPost();
   }, []);
