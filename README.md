@@ -1,6 +1,6 @@
 # Agile Webshop
 
-This project is a school group project focused on learning agile development. While the coding aspect was included, our primary emphasis was on mastering agile methodologies. This experience enhanced our understanding of agile practices and their application in real-world projects.
+This is a school group project focused on learning agile development. While the coding aspect was included, our primary emphasis was on mastering agile methodologies. This experience enhanced our understanding of agile practices and their application in real-world projects.
 
 #### Scrum
 
@@ -12,11 +12,11 @@ This project is a school group project focused on learning agile development. Wh
 
 1. Install dependencies.
 
-### `npm install`
+##### `npm install`
 
 2. Start the application.
 
-### `npm start`
+##### `npm start`
 
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser if it doesn't open automatically.
 
